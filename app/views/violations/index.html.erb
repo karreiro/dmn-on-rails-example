@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Violations</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Driver</th>
+      <th>Type</th>
+      <th>Speed limit</th>
+      <th>Actual speed</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @violations.each do |violation| %>
+      <tr>
+        <td><%= violation.driver.name %></td>
+        <td><%= violation.violation_type %></td>
+        <td><%= violation.speed_limit %></td>
+        <td><%= violation.actual_speed %></td>
+        <td><%= link_to 'Show', violation %></td>
+        <td><%= link_to 'Edit', edit_violation_path(violation) %></td>
+        <td><%= link_to 'Destroy', violation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Violation', new_violation_path %>

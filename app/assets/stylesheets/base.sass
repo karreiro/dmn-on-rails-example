@@ -1,0 +1,123 @@
+$color-initial: #333 !default
+$color-primary: #e4b91c !default
+$color-secondary: #444 !default
+$color-tertiary: #f4f5f6 !default
+$color-quaternary: #d1d1d1 !default
+$color-quinary: #e1e1e1 !default
+
+
+body
+  zoom: 1.25
+  padding-top: 7.6rem
+
+  *
+	  font-family: 'Roboto Mono', 'Helvetica', sans-serif
+
+  a
+    color: #000
+    padding: .2rem .8rem
+
+  h2
+    border-bottom: 2px solid $color-secondary
+    margin: 0
+
+  strong
+    color: $color-initial
+
+  form
+    max-width: 500px
+
+  table
+    th
+      background: #DEDEDE
+    th, th:first-child, td, td:first-child
+      padding-left: 1rem
+      padding-right: 0
+
+// === Header bar ===
+
+body nav
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  background: #111
+  height: 8rem
+  padding: 1.25rem 2.5rem 1rem
+  color: #AAA
+  overflow: hidden
+  h1, a, img
+    display: inline-block
+    vertical-align: middle
+    margin: 0
+  h1
+    padding: 0 1.25rem
+    color: #DDD
+  a, a:visited
+    color: #AAA
+  a:hover
+    color: #FFF
+    background: unset
+    text-decoration: underline
+  img
+    max-height: 100%
+    padding-bottom: .4rem
+
+@media (max-width: 900px)
+  body nav
+    zoom: .75
+
+@media (max-width: 650px)
+  body nav
+    zoom: .5
+  table
+    zoom: .7
+
+// === Profile picture style ===
+
+.driver-picture
+  filter: grayscale(.5) sepia(.5)
+  border: 2px solid #333
+  max-height: 100px
+
+
+// === Flash messages style ===
+
+#notice
+  color: #060
+
+.field_with_errors
+  color: #C00
+
+  input[type='email'],
+  input[type='number'],
+  input[type='password'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='text'],
+  input[type='url'],
+  textarea,
+  select,
+  & + select
+    border-color: #C00
+
+#error_explanation
+  max-width: 450px
+  border: 1px solid #333
+  background-color: #f3f3f3
+  margin: 10px 0 20px
+  ul
+    margin: 5px 5px 15px
+    list-style: none
+  h2, ul li
+    font-size: 14px
+    padding-left: 10px
+  h2
+    padding: 10px
+    text-align: left
+    font-weight: bold
+    margin: 0
+    background-color: #900
+    color: #fff
+    border: 4px solid #f3f3f3
+

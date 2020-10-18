@@ -1,0 +1,37 @@
+<%= form_with(model: violation, local: true) do |form| %>
+  <% if violation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(violation.errors.count, "error") %> prohibited this violation from being saved:</h2>
+
+      <ul>
+        <% violation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :driver %>
+    <%= form.select(:driver_id, @drivers.map { |d| [d.name, d.id] }, :include_blank => '- Please select the driver -') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :violation_type %>
+    <%= form.text_field :violation_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :speed_limit %>
+    <%= form.text_field :speed_limit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_speed %>
+    <%= form.text_field :actual_speed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

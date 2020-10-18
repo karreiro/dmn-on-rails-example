@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @driver.name %> (<%= @driver.age %> years old) - <%= @driver.points %> poitns
+</p>
+
+<p>
+  <%= image_tag @driver.picture_url, class: 'driver-picture' %>
+</p>
+
+
+<%= link_to 'Edit', edit_driver_path(@driver) %> |
+<%= link_to 'Back', drivers_path %>
